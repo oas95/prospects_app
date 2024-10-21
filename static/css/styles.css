@@ -1,0 +1,148 @@
+/* General styles for the body */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url("/static/images/background.png");  /* Path to your image */
+    background-size: cover;  /* Ensure the image covers the entire background */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  /* This makes the background image stay fixed when scrolling */
+    font-family: Arial, sans-serif;  /* Font styling */
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.849);  /* Semi-transparent background for the form */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 50px auto;  /* Center the form horizontally */
+    box-shadow: 0px 0px 30px (#1b2a56);  /* Add a shadow to the form */
+}
+
+/* Container for the form header (image and title) */
+.form-header {
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.849);
+    padding-top: 20px;
+    position: sticky; /* Sticky positioning */
+    top: 0;  /* Stick at the top of the viewport */
+    z-index: 100;  /* Ensure it stays on top of other content */
+}
+
+
+/* Style for the image above the form */
+.form-header .form-image {
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Style for the main form heading */
+h1 {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.849);
+    max-width: 500px;
+    border-radius: 10px;
+    margin: 50px auto;
+    font-size: 24px;
+    color: #000000    ;
+    margin-bottom: 20px;
+}
+
+
+/* Form field labels */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="submit"],
+input[list] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Dropdown list */
+datalist {
+    font-size: 16px;
+}
+
+/* Style for the submit button */
+input[type="submit"] {
+    background-color: #1b2a56    ;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Style for error messages, if needed */
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Adjustments for smaller screens (responsive) */
+@media screen and (max-width: 600px) {
+    form {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="submit"] {
+        font-size: 14px;
+    }
+}
+
+/* Autocomplete items styling */
+.autocomplete-items {
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    position: absolute;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: white;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+    background-color: #e9e9e9;
+}
+
+.autocomplete-active {
+    background-color: #1e90ff !important;
+    color: #ffffff;
+}
+

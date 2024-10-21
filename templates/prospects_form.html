@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prospects Form</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="form-header">
+        <img src="/static/images/2C_Logo_blue.png" alt="Company Logo" class="form-image">
+    </div>
+    <h1>Employee Information Form</h1>
+    <form action="/submit" method="POST">
+        <label for="ssn">Social Security Number:</label><br>
+        <input type="text" id="ssn" name="ssn" pattern="\d{3}-\d{2}-\d{4}" placeholder="XXX-XX-XXXX" required><br><br>
+
+        <label for="first_name">First Name:</label><br>
+        <input type="text" id="first_name" name="first_name" required><br><br>
+
+        <label for="last_name">Last Name:</label><br>
+        <input type="text" id="last_name" name="last_name" required><br><br>
+
+        <label for="craft">Craft:</label><br>
+        <input type="text" id="craft" name="craft" list="crafts_list" required><br><br>
+
+        <!-- Dropdown for Craft -->
+        <datalist id="crafts_list">
+            {% for craft in crafts %}
+                <option value="{{ craft }}">{{ craft }}</option>
+            {% endfor %}
+        </datalist>
+
+        <label for="phone">Cell Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" pattern="\d{10}" placeholder="10-digit phone number" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="nccer">NCCER Certified? (If Yes input NCCER Number, otherwise NA):</label><br>
+        <input type="text" id="nccer" name="nccer" required><br><br>
+
+        <label for="date_available">Date Available:</label><br>
+        <input type="date" id="date_available" name="date_available" required><br><br>
+
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="/static/js/autocomplete.js"></script>
+</body>
+</html>
+
+
