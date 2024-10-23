@@ -50,7 +50,7 @@ def get_crafts_from_csv():
 @app.route('/')
 def index():
     crafts = get_crafts_from_csv()  # Load crafts from the CSV file
-    return render_template('prospects_form.html', crafts=crafts)
+    return render_template('index.html', crafts=crafts)
 
 @app.route('/get_crafts')
 def get_crafts():
