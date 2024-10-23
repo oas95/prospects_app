@@ -7,7 +7,10 @@ from datetime import datetime, timezone
 app = Flask(__name__)
 
 # Configure PostgreSQL Database connection
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://flask_user:Taco!995@localhost/prospects'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://flask_user:Taco!995@localhost/prospects'
+#app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# PostgreSQL connection details
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://omar-rasp4:9159@169.254.122.148:5432/employee_management'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -101,8 +104,8 @@ def submit():
 
         return redirect('/')
 
-
-
+#if __name__ == '__main__':
+    #app.run(host='0.0.0.0', port=5000, debug=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
