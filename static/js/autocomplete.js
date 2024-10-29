@@ -1,13 +1,26 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("JavaScript loaded and DOM is ready");  // Debugging message
+    console.log("JavaScript loaded and DOM is ready");
+
+    // Fetch crafts data
     fetch('/get_crafts')
     .then(response => response.json())
     .then(crafts => {
-        console.log("Crafts received from server:", crafts);  // Print the crafts data
+        console.log("Crafts received from server:", crafts);
         autocomplete(document.getElementById("craft"), crafts);
     })
     .catch(err => {
-        console.error("Error fetching crafts:", err);  // Catch any errors
+        console.error("Error fetching crafts:", err);
+    });
+
+    // Fetch referrals data
+    fetch('/get_referrals')
+    .then(response => response.json())
+    .then(referrals => {
+        console.log("Referrals received from server:", referrals);
+        autocomplete(document.getElementById("referral"), referrals);
+    })
+    .catch(err => {
+        console.error("Error fetching referrals:", err);
     });
 });
 
@@ -79,8 +92,7 @@ function autocomplete(input, array) {
         }
     }
 
-    document.addEventListener("click", function (e) {
+    document.addEventListener("click", function(e) {
         closeAllLists(e.target);
     });
 }
-

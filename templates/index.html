@@ -13,16 +13,19 @@
     <h1>Employee Information Form</h1>
     <form action="/submit" method="POST">
         <label for="ssn">Social Security Number:</label><br>
-        <input type="text" id="ssn" name="ssn" pattern="\d{3}-\d{2}-\d{4}" placeholder="XXX-XX-XXXX" required><br><br>
+        <input type="text" id="ssn" name="ssn" placeholder="XXX-XX-XXXX" required><br><br>
 
         <label for="first_name">First Name:</label><br>
-        <input type="text" id="first_name" name="first_name" required><br><br>
+        <input type="text" id="first_name" name="first_name" placeholder="Ben" required><br><br>
 
         <label for="last_name">Last Name:</label><br>
-        <input type="text" id="last_name" name="last_name" required><br><br>
+        <input type="text" id="last_name" name="last_name" placeholder="Dover" required><br><br>
+
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob" required><br><br>
 
         <label for="craft">Craft:</label><br>
-        <input type="text" id="craft" name="craft" list="crafts_list" required><br><br>
+        <input type="text" id="craft" name="craft" list="crafts_list" placeholder="Choose from Dropdown" required><br><br>
 
         <!-- Dropdown for Craft -->
         <datalist id="crafts_list">
@@ -35,20 +38,32 @@
         <input type="tel" id="phone" name="phone" pattern="\d{10}" placeholder="10-digit phone number" required><br><br>
 
         <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+        <input type="email" id="email" name="email" placeholder="email@email.com" required><br><br>
 
-        <label for="nccer">NCCER Certified? (If Yes input NCCER Number, otherwise NA):</label><br>
+        <label for="nccer">NCCER Certified? (If Yes, input NCCER Number):</label><br>
         <input type="text" id="nccer" name="nccer" required><br><br>
+        
+        <label for="referral">Who referred you?</label><br>
+        <input type="text" id="referral" name="referral" list="referrals_list" required><br><br>
+
+        <!-- Dropdown for Referral -->
+        <datalist id="referrals_list">
+            {% for referral in referrals %}
+                <option value="{{ referral }}">{{ referral }}</option>
+            {% endfor %}
+        </datalist>
 
         <label for="date_available">Date Available:</label><br>
         <input type="date" id="date_available" name="date_available" required><br><br>
-
 
         <input type="submit" value="Submit">
     </form>
 
     <script src="/static/js/autocomplete.js"></script>
+    <!-- Link to the JavaScript file -->
+    <script src="/static/js/ssnFormatter.js"></script>
 </body>
 </html>
+
 
 

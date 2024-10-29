@@ -17,7 +17,7 @@ form {
     border-radius: 10px;
     max-width: 500px;
     margin: 50px auto;  /* Center the form horizontally */
-    box-shadow: 0px 0px 30px (#1b2a56);  /* Add a shadow to the form */
+    box-shadow: 0px 0px 30px #1b2a56;  /* Add a shadow to the form */
 }
 
 /* Container for the form header (image and title) */
@@ -31,7 +31,6 @@ form {
     top: 0;  /* Stick at the top of the viewport */
     z-index: 100;  /* Ensure it stays on top of other content */
 }
-
 
 /* Style for the image above the form */
 .form-header .form-image {
@@ -48,10 +47,9 @@ h1 {
     border-radius: 10px;
     margin: 50px auto;
     font-size: 24px;
-    color: #000000    ;
+    color: #000000;
     margin-bottom: 20px;
 }
-
 
 /* Form field labels */
 label {
@@ -70,19 +68,15 @@ input[list] {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 4px;
     box-sizing: border-box;
-}
-
-/* Dropdown list */
-datalist {
     font-size: 16px;
 }
 
 /* Style for the submit button */
 input[type="submit"] {
-    background-color: #1b2a56    ;
+    background-color: #1b2a56;
     color: white;
     cursor: pointer;
     font-weight: bold;
@@ -118,31 +112,4 @@ input[type="submit"]:hover {
     }
 }
 
-/* Autocomplete items styling */
-.autocomplete-items {
-    border: 1px solid #d4d4d4;
-    border-bottom: none;
-    border-top: none;
-    z-index: 99;
-    position: absolute;
-    max-height: 200px;
-    overflow-y: auto;
-    background-color: white;
-}
-
-.autocomplete-items div {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #fff;
-    border-bottom: 1px solid #d4d4d4;
-}
-
-.autocomplete-items div:hover {
-    background-color: #e9e9e9;
-}
-
-.autocomplete-active {
-    background-color: #1e90ff !important;
-    color: #ffffff;
-}
 
