@@ -12,7 +12,7 @@ app = Flask(__name__)
 #app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # PostgreSQL connection details
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://llcindustrial-omar:9159@169.254.122.149:5432/employee_management'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://llcindustrial-omar:9159@169.254.122.129:5432/employee_management'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
