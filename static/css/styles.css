@@ -11,13 +11,15 @@ body {
     font-family: Arial, sans-serif;  /* Font styling */
 }
 
+/* Styling for the form container */
 form {
     background-color: rgba(255, 255, 255, 0.849);  /* Semi-transparent background for the form */
     padding: 20px;
     border-radius: 10px;
-    max-width: 500px;
+    max-width: 90%;  /* Use relative max-width to ensure the form scales down for small screens */
     margin: 50px auto;  /* Center the form horizontally */
     box-shadow: 0px 0px 30px #1b2a56;  /* Add a shadow to the form */
+    box-sizing: border-box;  /* Include padding and border in the element's total width and height */
 }
 
 /* Container for the form header (image and title) */
@@ -34,7 +36,7 @@ form {
 
 /* Style for the image above the form */
 .form-header .form-image {
-    max-width: 500px;
+    max-width: 100%;  /* Ensure the image never exceeds the width of its container */
     height: auto;
     margin-bottom: 20px;
 }
@@ -43,12 +45,11 @@ form {
 h1 {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.849);
-    max-width: 500px;
+    max-width: 90%;
     border-radius: 10px;
-    margin: 50px auto;
-    font-size: 24px;
+    margin: 20px auto;
+    font-size: 2rem;
     color: #000000;
-    margin-bottom: 20px;
 }
 
 /* Form field labels */
@@ -71,7 +72,7 @@ input[list] {
     border: 1px solid #000000;
     border-radius: 4px;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 /* Style for the submit button */
@@ -95,21 +96,39 @@ input[type="submit"]:hover {
 }
 
 /* Adjustments for smaller screens (responsive) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     form {
-        width: 90%;
+        width: 95%;  /* Reduce the width of the form slightly for smaller screens */
+        padding: 15px;
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 1.5rem;  /* Decrease font size for headings on smaller screens */
     }
 
     input[type="text"],
     input[type="email"],
     input[type="tel"],
     input[type="submit"] {
-        font-size: 14px;
+        font-size: 0.9rem;  /* Reduce input font size for smaller devices */
     }
 }
 
+/* Adjustments for extra-small screens (e.g., phones) */
+@media screen and (max-width: 480px) {
+    form {
+        width: 100%;
+        margin: 20px auto;
+    }
 
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="submit"] {
+        font-size: 0.8rem;
+    }
+}
